@@ -24,14 +24,13 @@ $(function() {
   var $currentInput = $usernameInput.focus();
 
   var socket = io();
-
   function addParticipantsMessage (data) {
     var message = '';
-    // if (data.numUsers === 1) {
-    //   message += "there's 1 participant";
-    // } else {
-    //   message += "there are " + data.numUsers + " participants";
-    // }
+    if (data.numUsers === 1) {
+    //  message += "there's 1 participant";
+    } else {
+    //  message += "there are " + data.numUsers + " participants";
+    }
     log(message);
   }
 
@@ -45,9 +44,9 @@ $(function() {
       $chatPage.show();
       $loginPage.off('click');
       $currentInput = $inputMessage.focus();
-
       // Tell the server your username
       socket.emit('add user', username);
+
     }
   }
 
@@ -77,6 +76,7 @@ $(function() {
   // Adds the visual chat message to the message list
   function addChatMessage (data, options) {
     // Don't fade the message in if there is an 'X was typing'
+    console.log(data);
     var $typingMessages = getTypingMessages(data);
     options = options || {};
     if ($typingMessages.length !== 0) {
@@ -199,7 +199,7 @@ $(function() {
     if (event.which === 13) {
       if (username) {
         sendMessage();
-        socket.emit('stop typing');
+        //socket.emit('stop typing');
         typing = false;
       } else {
         setUsername();
@@ -238,6 +238,7 @@ $(function() {
 
   // Whenever the server emits 'new message', update the chat body
   socket.on('new message', function (data) {
+    console.log("Server msg");
     addChatMessage(data);
   });
 
