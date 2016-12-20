@@ -1,0 +1,28 @@
+{
+  "name": "chatbot",
+  "version": "0.1.0",
+  "description": "A chatbot for getting things",
+  "main": "index.js",
+  "dependencies": {
+    "rivescript": "^1.17.1",
+    "socket.io": "^1.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ramprasathb/chatbot.git"
+  },
+  "keywords": [
+    "Chatbot"
+  ],
+  "author": "Ramprasath Balakrishnan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ramprasathb/chatbot/issues"
+  },
+  "homepage": "https://github.com/Ramprasathb/chatbot#readme"
+}
